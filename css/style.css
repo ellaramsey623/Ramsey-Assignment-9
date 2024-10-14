@@ -1,0 +1,417 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #d7e3f2;
+}
+
+header h1 {
+    margin: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: rgb(71, 75, 79);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Featured Article */
+.featured-article {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.featured-article img {
+    width: 100%;
+    height: auto;
+}
+
+h3 p {
+    display: inline-block;
+    max-width: 400px;
+    
+}
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+/* Carousel Styles */
+.latest-news {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+    justify-content: center; /* Centers the news cards */
+}
+
+
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #6a99d2;
+    color: #000;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Responsive adjustments news card*/
+@media (max-width: 768px) {
+    .news-card {
+        flex: 0 0 calc(100% - 20px); /* Single card at a time for smaller screens */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .news-card {
+        flex: 0 0 calc(50% - 10px); /* Show 2 cards on smaller screens */
+    }
+}
+
+
+main{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f3f3f3;
+}
+
+.article-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.5fr;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Article Column Styling */
+.article-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.article-column img {
+    width: 100%;
+    height: auto;
+}
+
+.article-column h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.article-column p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.article-column a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #d7e3f2;
+    padding: 15px;
+    border: 1px solid #d7e3f2;
+}
+
+.advertisement h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.advertisement img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.advertisement p {
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .article-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        margin-top: 20px;
+    }
+}
+
+.photo-gallery{
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-carousel{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo{
+    width: 100%;
+    height: 400px;
+    display: none;
+}
+
+.photo.active {
+    display: block;
+    margin: 0 auto;
+}
+
+.photo img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.gallery-controls {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+button{
+    padding: 10px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+#prev {
+    position: absolute;
+    left: -40px;
+    align-self: center;
+}
+
+#next {
+    position: absolute;
+    right: -40px;
+    align-self: center;
+}
+
+
+
+
+
+/*featured article styles*/
+.featured-article {
+    margin: 20px;
+}
+
+.featured-article img {
+    width: 600px;
+    height: auto;
+}
+
+.featured-article h3 {
+    margin: 10px 0;
+}
+
+.read-more {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+
+/* latest news styles */
+.latest-news {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    width: auto;
+    
+}
+
+.news-card {
+    flex: 0 0 calc(33.333% - 20px);
+    box-sizing: border-box;
+    text-align: left;
+    background-color: #d7e3f2;
+    padding: 10px;
+    border: 1px solid #ddd;
+    min-height: 200px;
+}
+
+.news-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+
+/*Hamburger Menu Style */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+        
+
+    }
+
+    nav ul.active {
+        display: flex;
+        padding: 5px;
+    }
+
+   
+
+   
+
+    .carousel {
+        flex-direction: row;
+    }
+
+    .news-card {
+        flex: 0 0 calc(50% - 10px)
+        
+    }
+
+    .carousel-btn {
+        font-size: 18px;
+        padding: 5px;
+    }
+   
+}
+

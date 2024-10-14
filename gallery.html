@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper Gallery Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Ella's Daily Dispatch</h1>
+        <nav>
+            <div class="hamburger">☰</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="article.html">Articles</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="photo-gallery">
+        
+        <div class="photo-carousel">
+            <div class="photo"><img src="images/featured-image.avif" alt="online jourlanism"></div>
+        <div class="photo"><img src="images/news1.jpg" alt="sheep grazing"></div>
+        <div class="photo"><img src="images/news2.jpg" alt="Helene damage"></div>
+        <div class="photo"><img src="images/news3.jpg" alt="Bank of America"></div>
+        <div class="photo"><img src="images/news4.jpg" alt="The Wild Robot"></div>
+        <div class="photo"><img src="images/news5.jpg" alt="Pink Floyd"></div>
+        </div>
+       
+         <div class="gallery-controls">
+            <button id="prev">Previous</button>
+            <button id="next"> Next</button>
+         </div>
+            
+    </main>
+    <script>
+        const photos = document.querySelectorAll('.photo');
+        let currentPhotoIndex = 0;
+
+        function showPhoto(index) {
+            photos.forEach(photo => photo.classList.remove('active'));
+            photos[index].classList.add('active');
+        }
+        showPhoto(currentPhotoIndex);
+
+        document.getElementById('prev').addEventListener('click' ,function() {
+            currentPhotoIndex=(currentPhotoIndex > 0) ? currentPhotoIndex - 1 : photos.length -1;
+            showPhoto(currentPhotoIndex);
+        })
+        document.getElementById('next').addEventListener('click' ,function(){
+            currentPhotoIndex=(currentPhotoIndex < photos.length -1)? currentPhotoIndex +1 : 0;
+        showPhoto(currentPhotoIndex);
+        })
+        
+    </script>
+
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click',function(){
+            document.querySelector('nav ul').classList.toggle('active');
+        }) 
+    </script>
+    
+</body>
+</html>

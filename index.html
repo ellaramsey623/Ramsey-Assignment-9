@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper Landing Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Ella's Daily Dispatch</h1>
+        <nav>
+            <div class="hamburger">☰</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="article.html">Articles</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-layout">
+        <section class="main-content">
+            <div class="featured-article">
+                <h2>Featured Article</h2>
+                <article>
+                    <img src="images/featured-image.avif" alt="Featured Article Image">
+                    <h3>Understanding the Rise of Digital Journalism</h3>
+                    <p>As print media slowly fades away, digital journalism has taken center stage in the world of news. This article delves into the major factors contributing to this shift, and how news is consumed in the digital age.</p>
+                    <a href="article.html" class="read-more">Read More</a>
+                </article>
+            </div>
+
+            <section class="latest-news">
+                <h2>Latest News</h2>
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev-btn">&#10094;</button>
+                    <div class="carousel">
+                        <div class="news-card">
+                            <img src="images/news1.jpg" alt="News 1">
+                            <h3>Cities are Using Sheep Grazing for Urban Landscapes</h3>
+                        </div>
+                        <div class="news-card">
+                            <img src="images/news2.jpg" alt="News 2">
+                            <h3>How Helene has Devastated the South</h3>
+                        </div>
+                        <div class="news-card">
+                            <img src="images/news3.jpg" alt="News 3">
+                            <h3>Bank of America is Down</h3>
+                        </div>
+                        <div class="news-card">
+                            <img src="images/news4.jpg" alt="News 4">
+                            <h3>'The Wild Robot' Breaks the Box Office</h3>
+                        </div>
+                        <div class="news-card">
+                            <img src="images/news5.jpg" alt="News 5">
+                            <h3>Pink Floyd Sells Music Rights to Sony</h3>
+                        </div>
+                        <div class="news-card">
+                            <img src="images/news6.jpg.png" alt="News 6">
+                            <h3>Saturday Night Goes Inside Chaotic Debut</h3>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next-btn">&#10095;</button>
+                </div>
+            </section>
+        </section>
+
+        <aside class="sidebar">
+            <div class="advertisement">
+                <h2>Advertisements</h2>
+                <img src= "images/pizzahutad.jpg" alt="Ad Image">
+                <p>Click Here to Order Now!</p>
+                <image src="images/circleweekad.jpg" alt="Ad Image 2"
+            </div>
+            
+        </aside>
+    </main>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const newsCards = document.querySelectorAll('.carousel .news-card');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentPosition = 0;
+        const cardWidth = newsCards[0].offsetWidth + 20; // Including gap between cards
+        const totalCards = newsCards.length;
+
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
+        }
+
+        nextBtn.addEventListener('click', function() {
+            if (currentPosition < totalCards - 3) { // Show 3 cards at a time
+                currentPosition++;
+                updateCarousel();
+            }
+        });
+
+        prevBtn.addEventListener('click', function() {
+            if (currentPosition > 0) {
+                currentPosition--;
+                updateCarousel();
+            }
+        });
+
+        window.addEventListener('resize', function () {
+            updateCarousel();
+        });
+
+       
+        
+    </script>
+
+    <script>
+          document.querySelector('.hamburger').addEventListener('click',function(){
+            document.querySelector('nav ul').classList.toggle('active');
+        }) 
+    </script>
+
+    <footer>
+        <p>Contact us at ellasdailydispatch@email.com</p>
+    </footer>
+</body>
+</html>
+

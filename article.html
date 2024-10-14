@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper Article Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Ella's Daily Dispatch</h1>
+        <nav>
+            <div class="hamburger">☰</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="article.html">Articles</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="article-layout">
+        <!-- First article in column 1 -->
+        <section class="article-column">
+            <article>
+                <img src="images/featured-image.avif" alt="Article 1 Image">
+                <h2>Understanding the Rise of Digital Journalism</h2>
+                <p>In recent years, journalism has rapidly shifted from traditional print media to digital platforms. The immediacy and interactivity of digital journalism allow real-time updates and engagement...</p>
+                <a href="#">Read more</a>
+            </article>
+        </section>
+
+        <!-- Second article in column 2 -->
+        <section class="article-column">
+            <article>
+                <img src="images/printmedia.jpeg" alt="Article 2 Image">
+                <h2>The Future of Print Media</h2>
+                <p>As print media continues to decline, many wonder what role physical newspapers and magazines will play in the future. Will print ever make a comeback, or has it become a relic of the past?</p>
+                <a href="#">Read more</a>
+            </article>
+        </section>
+
+        <!-- Sidebar column (advertisement) -->
+        <aside class="sidebar">
+            <section class="advertisement">
+                <h3>Get Your Daily News App</h3>
+                <img src="images/adimage.png" alt="Kittens">
+                <p>Download our app for the latest news updates on the go!</p>
+            </section>
+        </aside>
+    </main>
+
+
+     <script>
+        document.querySelector('.hamburger').addEventListener('click',function(){
+            document.querySelector('nav ul').classList.toggle('active');
+        }) 
+    </script>
+    
+</body>
+</html>
